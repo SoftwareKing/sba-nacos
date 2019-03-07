@@ -1,5 +1,6 @@
  Spring Boot Admin和Nacos集成
- -------
+ 
+-------
 
  
  **摘要**:本文主要讲解如何将`Spring Boot Admin`与Spring Cloud Alibaba中的`spring-cloud-starter-alibaba-nacos-discovery`进行整合使用。
@@ -7,9 +8,10 @@
  
 ## 1. 整合概述
  
- 通过搭建一个Spring Boot Admin Server，并将其通过spring-cloud-starter-alibaba-nacos-discovery注册到Nacos Server中。源码工程地址为:https://github.com/SoftwareKing/sba-nacos
+ 通过搭建一个Spring Boot Admin Server，并将其通过spring-cloud-starter-alibaba-nacos-discovery注册到Nacos Server中即可。
+ 源码工程地址为:https://github.com/SoftwareKing/sba-nacos
  
->说明本文使用的Spring Boot Admin的版本为2.1.2，Spring Cloud的版本为Greenwich.RELEASE，Spring Cloud Alibaba的版本为0.2.1.RELEASE。
+>说明本文使用的Spring Boot Admin的版本为2.1.2，Spring Cloud的版本为Greenwich.RELEASE，Spring Cloud Alibaba的版本为0.2.1.RELEASE。至于其它版本，请读者自行适配处理。
 
 ## 2. 创建sba-nacos工程
 
@@ -146,14 +148,15 @@ management:
     health:
       show-details: ALWAYS
 ```
+>其中127.0.0.1:8848为Nacos Server的地址。
  
 ## 3.启动测试
 
 ### 3.1 本地源码启动Nacos
 
-至于什么是Nacos，这里不做过多介绍。有兴趣者可以访问http://nacos.io或者访问http://nacos.net.
+至于什么是Nacos，这里不做过多介绍。有兴趣者可以访问[http://nacos.io](http://nacos.io),或者访问: [http://nacos.net](http://nacos.net).
 
->说明:http://nacos.net目前内容为快照版本。
+>说明: [http://nacos.net](http://nacos.net).目前内容为快照版本。
 
 访问https://github.com/alibaba/nacos ,使用Git克隆Nacos代码，直接导入到IDEA中，如下所示设置启动参数，直接启动。
 ![](https://raw.githubusercontent.com/SoftwareKing/cdn/master/images/me20190307131151.png)
@@ -168,7 +171,7 @@ management:
 ![](https://raw.githubusercontent.com/SoftwareKing/cdn/master/images/me20190307131651.png)
 
 
-启动之后访问，nacos控制台，我们可以看到sba-nacos已经注册到Nacos注册中心。如下图所示.
+启动之后访问nacos控制台，我们可以看到sba-nacos已经注册到Nacos注册中心。如下图所示.
 ![](https://raw.githubusercontent.com/SoftwareKing/cdn/master/images/me20190307131338.png)
 
 >说明访问Nacos控制台，需要输入用户名和密码默认为用户名为nacos，密码:nacos
@@ -176,10 +179,4 @@ management:
 访问http://localhost:8080/#/instances/92cfba09790d/details，我们可以看到Spring Boot Admin Server已经成功启动，并且通过EndPoint获取到自己的端点信息，如下图所示:
 
 ![](https://raw.githubusercontent.com/SoftwareKing/cdn/master/images/me20190307132151.png)
-
-
-
- 
- 
- 
 
