@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: sba-nacos
+    cloud:
+      nacos:
+        discovery:
+          server-addr: 127.0.0.1:8848
+
+server:
+    port: 8080 #启动端口
+
+info.groupId: @project.groupId@
+info.artifactId: @project.artifactId@
+info.version: @project.version@
+
+
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: ALWAYS
